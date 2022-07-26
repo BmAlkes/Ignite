@@ -15,7 +15,6 @@
   margin-top: calc(0px - 1.5rem - 6px);
 }
 .profile img {
-  box-sizing: initial;
   width: calc(8rem + 12px);
   height: calc(9rem + 12px);
   border-radius: 8px;
