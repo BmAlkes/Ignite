@@ -30,6 +30,13 @@ const Post = () => {
             <a href="#">#new project #nlw #rocketseat</a>
           </p>
         </div>
+        <form className="commentForm">
+          <strong>leave your feedback</strong>
+          <textarea placeholder="leave a feedback" />
+          <footer>
+            <button type="submit">Comment</button>
+          </footer>
+        </form>
       </article>
     </>
   );
