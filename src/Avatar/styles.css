@@ -1,0 +1,15 @@
+.Avatar {
+  width: calc(8rem + 12px);
+  height: calc(9rem + 12px);
+  border-radius: 8px;
+  object-position: center;
+}
+
+.AvatarWithBorder {
+  width: calc(8rem + 12px);
+  height: calc(9rem + 12px);
+  border-radius: 8px;
+  border: 4px solid var(--gray-800);
+  outline: 2px solid var(--green-500);
+  object-position: center;
+}
