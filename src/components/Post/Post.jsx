@@ -1,4 +1,5 @@
 import React from "react";
+import Comment from "../Comments/Comment";
 import "./styles.css";
 
 const Post = () => {
@@ -37,6 +38,9 @@ const Post = () => {
             <button type="submit">Comment</button>
           </footer>
         </form>
+        <div className="commentList">
+          <Comment />
+        </div>
       </article>
     </>
   );
