@@ -3,7 +3,7 @@ import Avatar from "../../Avatar/Avatar";
 import Comment from "../Comments/Comment";
 import "./styles.css";
 
-const Post = ({ author, publisheAt }) => {
+const Post = ({ author, publisheAt, content }) => {
   const dateFormat = new Intl.DateTimeFormat("pt-BR", {
     day: "2-digit",
     month: "long",
@@ -25,13 +25,10 @@ const Post = ({ author, publisheAt }) => {
         </header>
 
         <div className="content">
-          <p>Hey guys</p>
+          <p>{content[0].content}</p>
+          <p>{content[1].content}</p>
           <p>
-            I just uploaded another project in my portfolio, and a project I did
-            at the nlw rocketseat event
-          </p>
-          <p>
-            <a href="#">#new project #nlw #rocketseat</a>
+            <a href="#">{content[2].content}</a>
           </p>
         </div>
         <form className="commentForm">

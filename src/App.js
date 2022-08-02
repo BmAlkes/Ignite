@@ -37,7 +37,7 @@ const posts = [
       role: "BackEnd Developer",
     },
     content: [
-      { type: "paragraph", content: "Hey guys" },
+      { type: "paragraph", content: "Hey guys👌👌👌👌👌👌" },
       {
         type: "paragraph",
         content:
@@ -56,7 +56,7 @@ const posts = [
       role: "FullStack Developer",
     },
     content: [
-      { type: "paragraph", content: "Hey guys" },
+      { type: "paragraph", content: "Hey guys 👌👌" },
       {
         type: "paragraph",
         content:
