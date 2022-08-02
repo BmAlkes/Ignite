@@ -25,11 +25,17 @@ const Post = ({ author, publisheAt, content }) => {
         </header>
 
         <div className="content">
-          <p>{content[0].content}</p>
-          <p>{content[1].content}</p>
-          <p>
-            <a href="#">{content[2].content}</a>
-          </p>
+          {content.map((line) => {
+            if (line.type === "paragraph") {
+              return <p>{line.content}</p>;
+            } else if (line.type === "link") {
+              return (
+                <p>
+                  <a href="">{line.content}</a>
+                </p>
+              );
+            }
+          })}
         </div>
         <form className="commentForm">
           <strong>leave your feedback</strong>
