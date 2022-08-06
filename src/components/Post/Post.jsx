@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "../../Avatar/Avatar";
 import Comment from "../Comments/Comment";
 import "./styles.css";
 
 const Post = ({ author, publisheAt, content }) => {
+  const [comments, setComments] = useState([]);
+  const [newComments, setNewComments] = useState("");
   const dateFormat = new Intl.DateTimeFormat("pt-BR", {
     day: "2-digit",
     month: "long",
     hour: "2-digit",
     minute: "2-digit",
   }).format(publisheAt);
+
+  function handleCreateNewComment(e) {
+    e.preventDefault();
+    setComments([...comments, newComments]);
+
+    e.target.comment.value = "";
+  }
+  function handleNewCommentChange(e) {
+    setNewComments(e.target.value);
+  }
+
   return (
     <>
       <article className="post">
@@ -37,15 +50,21 @@ const Post = ({ author, publisheAt, content }) => {
             }
           })}
         </div>
-        <form className="commentForm">
+        <form onSubmit={handleCreateNewComment} className="commentForm">
           <strong>leave your feedback</strong>
-          <textarea placeholder="leave a feedback" />
+          <textarea
+            placeholder="leave a feedback"
+            name="comment"
+            onChange={handleNewCommentChange}
+          />
           <footer>
             <button type="submit">Comment</button>
           </footer>
         </form>
         <div className="commentList">
-          <Comment />
+          {comments.map((comment, index) => (
+            <Comment key={index} content={comment} />
+          ))}
         </div>
       </article>
     </>

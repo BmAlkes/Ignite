@@ -3,7 +3,7 @@ import React from "react";
 import Avatar from "../../Avatar/Avatar";
 import "./style.css";
 
-const Comment = () => {
+const Comment = ({ content }) => {
   return (
     <div className="comment">
       <Avatar
@@ -25,7 +25,7 @@ const Comment = () => {
               <Trash size={24} />
             </button>
           </header>
-          <p>Very Good!! congratulations!!👌👌👌</p>
+          <p>{content}</p>
         </div>
         <footer>
           <button>
