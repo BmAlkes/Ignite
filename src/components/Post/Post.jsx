@@ -20,6 +20,7 @@ const Post = ({ author, publisheAt, content }) => {
     e.target.comment.value = "";
   }
   function handleNewCommentChange(e) {
+    e.target.setCustomValidity("");
     setNewComments(e.target.value);
   }
 
@@ -29,6 +30,12 @@ const Post = ({ author, publisheAt, content }) => {
     });
     setComments(commentsWithoutDeleteOne);
   }
+
+  const handleNewCommentInvalid = (e) => {
+    e.target.setCustomValidity("Fucking new comment");
+  };
+
+  const isNewCommentEmpty = newComments.length === 0;
 
   return (
     <>
@@ -63,9 +70,13 @@ const Post = ({ author, publisheAt, content }) => {
             placeholder="leave a feedback"
             name="comment"
             onChange={handleNewCommentChange}
+            required
+            onInvalid={handleNewCommentInvalid}
           />
           <footer>
-            <button type="submit">Comment</button>
+            <button type="submit" disabled={isNewCommentEmpty}>
+              Comment
+            </button>
           </footer>
         </form>
         <div className="commentList">
