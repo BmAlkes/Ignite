@@ -3,7 +3,11 @@ import React from "react";
 import Avatar from "../../Avatar/Avatar";
 import "./style.css";
 
-const Comment = ({ content }) => {
+const Comment = ({ content, onDeleteComment }) => {
+  const handleDeleteComment = (e) => {
+    onDeleteComment(content);
+  };
+
   return (
     <div className="comment">
       <Avatar
@@ -21,7 +25,7 @@ const Comment = ({ content }) => {
                 Published around a hour ago{" "}
               </time>
             </div>
-            <button>
+            <button onClick={handleDeleteComment}>
               <Trash size={24} />
             </button>
           </header>
